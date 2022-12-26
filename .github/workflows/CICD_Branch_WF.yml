@@ -4,11 +4,11 @@ name: CI_CD_WF
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-#  push:
- #   branches: [ "Test_Branch_CICD" ]
-    #paths: 
-     #   - 'DWCode/**'
+  # Triggers the workflow on push or pull request events but only for the "Test_Branch_CICD" branch
+  #push:
+   # branches: [ "Test_Branch_CICD" ]
+   # paths: 
+    #    - 'DWCode/**'
     
   pull_request:
     branches: [ "Test_Branch_CICD" ]
@@ -44,15 +44,36 @@ jobs:
         run: |
           echo "GITHUB_WORKSPACE:" $GITHUB_WORKSPACE
           python --version
-          import os
           echo "Step 1: Installing schemachange"
           pip install schemachange
           
           echo "Step 2: Running schemachange"
-          
-          rootdir = GITHUB_WORKSPACE/DWCode
-          for file in os.listdir(rootdir):
-            d = os.path.join(rootdir, file)
-            if os.path.isdir(d):
-            Echo "current Path : " d
-          schemachange -f $GITHUB_WORKSPACE/DWCode -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+      ##CareTeam 
+          schemachange -f $GITHUB_WORKSPACE/DWCode\CareTeam\Functions     -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+          schemachange -f $GITHUB_WORKSPACE/DWCode\CareTeam\Procedures    -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\CareTeam\Tables        -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\CareTeam\Views         -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+
+##Claims
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Claims\Functions        -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Claims\Procedures       -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Claims\Tables           -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Claims\Views            -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+
+##Medication
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Medication\Functions      -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Medication\Procedures     -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Medication\Tables         -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Medication\Views          -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+
+##Organization
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Organization\Functions     -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Organization\Procedures    -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Organization\Tables        -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Organization\Views         -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+
+##Patient
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Patient\Functions          -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Patient\Procedures         -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Patient\Tables             -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+                schemachange -f $GITHUB_WORKSPACE/DWCode\Patient\Views              -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
