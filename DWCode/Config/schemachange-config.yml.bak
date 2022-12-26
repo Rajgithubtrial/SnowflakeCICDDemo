@@ -19,7 +19,7 @@ config-version: 1
 #snowflake-warehouse: 'warehouse'
 
 # The name of the default database to use. Can be overridden in the change scripts.
-snowflake-database: 'CICD_DEV'
+snowflake-database: 'CICD_TEST'
 
 # Used to override the default name of the change history table (the default is METADATA.SCHEMACHANGE.CHANGE_HISTORY)
 #change-history-table: null
@@ -44,4 +44,4 @@ snowflake-database: 'CICD_DEV'
 #dry-run: false
 
 # A string to include in the QUERY_TAG that is attached to every SQL statement executed
-#query-tag: 'QUERY_TAG' 
+#query-tag: 'QUERY_TAG'
