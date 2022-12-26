@@ -3,8 +3,8 @@
 name: CI_CD_WF1
 
 # Controls when the workflow will run
+ # Triggers the workflow on push or pull request events but only for the "Test_Branch_CICD" branch
 on:
-  # Triggers the workflow on push or pull request events but only for the "Test_Branch_CICD" branch
   push:
     branches: [ "Dev_Branch" ]
      paths: 
