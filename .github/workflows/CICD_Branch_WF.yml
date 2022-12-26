@@ -7,7 +7,7 @@ name: CI_CD_WF1
 on:
   push:
     branches: [ "Dev_Branch" ]
-     paths: 
+    paths: 
         - 'DWCode/**'
     
   pull_request:
