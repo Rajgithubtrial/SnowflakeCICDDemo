@@ -1,0 +1,8 @@
+CREATE Schema if not exists  DW_POC;
+
+USE Schema DW_POC;
+
+CREATE TABLE Sample
+(ID NUMBER
+, NAME VARCHAR2(10)
+, ADDRESS VARCHAR2(300));
