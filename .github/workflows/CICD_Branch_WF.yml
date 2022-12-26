@@ -45,7 +45,7 @@ jobs:
           echo "Step 1: Installing schemachange"
           pip install schemachange
           echo "Step 2: Running schemachange - Config folder - " $GITHUB_WORKSPACE/DWCode/Config
-          schemachange [--config-folder $GITHUB_WORKSPACE/DWCode/Config] -f $GITHUB_WORKSPACE/DWCode/CareTeam/Functions     -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
+          schemachange [-h] [--config-folder $GITHUB_WORKSPACE/DWCode/Config] -f $GITHUB_WORKSPACE/DWCode/CareTeam/Functions     -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
           schemachange [-h] [--config-folder $GITHUB_WORKSPACE/DWCode/Config] -f $GITHUB_WORKSPACE/DWCode/CareTeam/Procedures    -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
           schemachange [-h] [--config-folder $GITHUB_WORKSPACE/DWCode/Config] -f $GITHUB_WORKSPACE/DWCode/CareTeam/Tables        -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
           schemachange [-h] [--config-folder $GITHUB_WORKSPACE/DWCode/Config] -f $GITHUB_WORKSPACE/DWCode/CareTeam/Views         -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table -ac
