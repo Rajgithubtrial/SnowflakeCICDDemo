@@ -5,8 +5,8 @@ name: CI_CD_WF
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "Test_Branch_CICD" ]
+#  push:
+ #   branches: [ "Test_Branch_CICD" ]
     #paths: 
      #   - 'DWCode/**'
     
