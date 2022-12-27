@@ -28,8 +28,8 @@ snowflake-database: 'CICD_DEV'
 #vars:
 #  var1: 'value1'
 #  var2: 'value2'
-  #secrets:
- #   var3: 'value3' # This is considered a secret and will not be displayed in any output
+  secrets:
+    var3: 'value3' # This is considered a secret and will not be displayed in any output
 
 # Create the change history schema and table, if they do not exist (the default is False)
 #create-change-history-table: false
