@@ -51,7 +51,7 @@ jobs:
           SF_DATABASE: 'CICD_DEV' 
           SNOWFLAKE_PASSWORD: ${{ steps.myGetSecretAction.outputs.SFPASSWORD }} 
         run: |
-          echo "GITHUB_WORKSPACE:" $GITHUB_WORKSPACE
+          echo "GITHUB_WORKSPACE: with Azure " $GITHUB_WORKSPACE 
           python --version
           echo "Step 1: Installing schemachange"
           pip install schemachange
