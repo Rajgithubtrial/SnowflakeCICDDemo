@@ -49,7 +49,7 @@ jobs:
           SF_USERNAME: ${{ steps.myGetSecretAction.outputs.SFUSERNAME }}
           SF_ROLE: ${{ steps.myGetSecretAction.outputs.SFROLE }}
           SF_WAREHOUSE: ${{ steps.myGetSecretAction.outputs.SFWAREHOUSE }}
-          SF_DATABASE: 'CICD_DEV' 
+          SF_DATABASE: 'CICD_TEST' 
           SNOWFLAKE_PASSWORD: ${{ steps.myGetSecretAction.outputs.SFPASSWORD }} 
         run: |
           echo "GITHUB_WORKSPACE:" $GITHUB_WORKSPACE
