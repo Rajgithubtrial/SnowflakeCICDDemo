@@ -8,4 +8,4 @@ create table if not exists TGT_Deploymnt (
 
 );
 
-INSERT INTO TGT_Deploymnt (Deployment) VALUES ('TEST run time 1: ');
+INSERT INTO TGT_Deploymnt (Deployment) VALUES ('TEST run time 2: ');
